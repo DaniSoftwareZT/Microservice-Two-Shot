@@ -1,14 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
-from rest_framework import viewsets
+from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
 from .models import LocationVO, Hat
-from .serializers import LocationVOSerializer, HatSerializer
+from common.json import ModelEncoder
 
-class LocationVOViewSet(viewsets.ModelViewSet):
-    queryset = LocationVO.objects.all()
-    serializer_class = LocationVOSerializer
+class LocationVOEncoder(ModelEncoder):
+    model = LocationVO
+    properties = ["closet_name"]
 
-class HatViewSet(viewsets.ModelViewSet):
-    queryset = Hat.objects.all()
-    serializer_class = HatSerializer
-
+class HatEncoder(ModelEncoder):
+    model = Hat
+    properties = ["fabric", "style_name", "colors", "image_url", "location"]

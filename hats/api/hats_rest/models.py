@@ -9,4 +9,8 @@ class Hat(models.Model):
     style_name = models.CharField(max_length=150)
     color = models.CharField(max_length=150)
     image_url = models.URLField(300)
-    location = models.CharField(max_length=150)
+    location = models.ForeignKey (
+        LocationVO,
+        related_name= 'hats',
+        on_delete=models.PROTECT,
+    )
