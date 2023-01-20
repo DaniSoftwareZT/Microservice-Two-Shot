@@ -15,7 +15,7 @@ from hats_rest.models import LocationVO
 # from hats_rest.models import Something
 
 def grab_hats():
-    url = ""
+    url = " http://wardrobe-api:8000/api/locations/"
     response = requests.get(url)
     content = json.loads(response.content)
     for location in content["locations"]:
