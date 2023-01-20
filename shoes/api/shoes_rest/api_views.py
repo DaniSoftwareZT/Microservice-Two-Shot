@@ -32,9 +32,10 @@ def shoe_list(request):
 
 
 @require_http_methods(["GET", "DELETE", "PUT"])
-def shoe_detail(request, pk):
-    if request.method == "POST":
-        shoe = Shoe.objects.get(id=pk)
+def shoe_detail(request, id):
+    if request.method == "GET":
+        shoe = Shoe.objects.get(id=id)
+        print(shoe)
         return JsonResponse(
             shoe,
             encoder=ShoeDetailEncoder,

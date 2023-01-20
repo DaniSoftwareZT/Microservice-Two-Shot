@@ -14,7 +14,7 @@ django.setup()
 from shoes_rest.models import BinVO
 
 
-def grab_shoes():
+def grab_bins():
     url = "http://wardrobe-api:8000/api/bins"
     response = requests.get(url)
     content = json.loads(response.content)
@@ -32,7 +32,7 @@ def poll():
     while True:
         print("Shoes poller polling for data")
         try:
-            grab_shoes()
+            grab_bins()
         except Exception as e:
             print(e, file=sys.stderr)
         time.sleep(60)
