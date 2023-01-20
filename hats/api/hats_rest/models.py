@@ -1,7 +1,8 @@
 from django.db import models
 
 class LocationVO(models.Model):
-    closet_name = models.CharField(max_length=100)
+    import_href = models.CharField(max_length=150, unique=True)
+    closet_name = models.CharField(max_length=150)
 
 
 class Hat(models.Model):
