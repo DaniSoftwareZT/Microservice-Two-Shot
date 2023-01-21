@@ -20,7 +20,7 @@ Created a Shoe model to store:
 - Optional Picture
 - Stored BIN (fetched from Wardrobe API)
 
-## REST API Design
+# Shoes REST API Design
 
 | HTTP Method | Path            | Description                    |
 | ----------- | --------------- | ------------------------------ |
