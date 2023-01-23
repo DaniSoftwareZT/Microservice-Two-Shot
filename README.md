@@ -3,7 +3,7 @@
 Team:
 
 - Ryan Paschen - Shoes
-- Person 2 - Which microservice?
+- Daniel Zambrana - Hats
 
 ## Design
 
@@ -32,5 +32,20 @@ Created a Shoe model to store:
 
 ## Hats microservice
 
-Explain your models and integration with the wardrobe
-microservice, here.
+Created a Hat model to store:
+
+-Fabric
+-Style Name
+-Color
+-Picture URL
+-Location
+
+## Hats REST API Design
+
+HTTP Method     Path           Description
+
+-GET           /api/hats       Get a list of all hats
+-GET           /api/hats/{id}  Get a single hat with ID
+-POST          /api/hats       Add a new hat to database
+-PUT           /api/hats{id}   Update an existing hat
+-DELETE        /api/hats{id}   Delete a hat by ID
